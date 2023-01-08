@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <p>Attendees</p>
+      <ul class="navbar">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./register.html">Register</a></li>
+        <li><a href="./login.html">LogIn</a></li>
+      </ul>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- form of login -->
+    <div class="form-section">
+      <h1>Login Here</h1>
+      <form action="" class="form">
+        <div>
+          <label for="email">Email</label>
+          <br />
+          <input type="email" class="email" />
+        </div>
+        <br />
+        <div>
+          <label for="password">Password</label>
+          <br />
+          <input type="password" class="password" />
+        </div>
+        <br />
+        <div>
+          <button type="submit">Login</button>
+        </div>
+      </form>
+      <!-- end of form of login -->
+      <p>Doesn't have an account?<a href="./register.html">register here</a></p>
+    </div>
+    <footer class="fotter">
+      <p class="copy-right">Copyright &copy;</p>
+    </footer>
+
+    <!-- js -->
+    <script>
+      const email = document.querySelector(".email");
+      const password = document.querySelector(".password");
+      const form = document.querySelector(".form");
+
+      const copyRight = document.querySelector(".copy-right");
+      const date = new Date().getFullYear();
+
+      copyRight.innerHTML += " " + date;
+
+      const validateForm = () => {
+        if (email.value == "" || password.value == "") {
+          alert("You must fill all the fields");
+          return;
+        }
+        if (password.value.length < 6) {
+          alert("Password must be of length 6");
+          return;
+        }
+      };
+
+      form.addEventListener("submit", validateForm);
+    </script>
+  </body>
+</html>
